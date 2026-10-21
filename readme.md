@@ -220,14 +220,14 @@ mvn clean install
 ```
 
 ## Security configuration
-In its default configuration, Petclinic doesn't have authentication and authorization enabled.
+In its default configuration, Petclinic has authentication and authorization **enabled**. Production deployments must keep `petclinic.security.enable=true` (the default) and ensure user credentials are configured in the database before starting the application.
 
 ### Basic Authentication
-In order to use the basic authentication functionality, turn in on from the `application.properties` file
+Authentication is enabled by default via the `application.properties` setting:
 ```properties
 petclinic.security.enable=true
 ```
-This will secure all APIs and in order to access them, basic authentication is required.
+All APIs require basic authentication. To disable authentication for local development only, set `petclinic.security.enable=false` in `application.properties`.
 Apart from authentication, APIs also require authorization. This is done via roles that a user can have.
 The existing roles are listed below with the corresponding permissions 
 
